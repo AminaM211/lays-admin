@@ -12,4 +12,22 @@ const router = createRouter({
   ]
 })
 
+// simpele guard
+router.beforeEach((to, from, next) => {
+  const token = localStorage.getItem('token')
+
+  const goingToAdmin = to.path.startsWith('/admin')
+  const goingToLogin = to.path === '/login'
+
+  if (goingToAdmin && !token) {
+    return next('/login')
+  }
+
+  if (goingToLogin && token) {
+    return next('/admin')
+  }
+
+  next()
+})
+
 export default router
