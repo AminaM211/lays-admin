@@ -22,8 +22,8 @@ export const useAuthStore = defineStore('auth', {
         localStorage.setItem('user', JSON.stringify(this.user))
 
         window.location.href = '/admin'
-      } catch (err) {
-        alert('Login failed')
+      } catch (e) {
+        alert('Wrong email or password.')
       }
     },
 

@@ -12,7 +12,7 @@ const handleLogin = async () => {
 </script>
 
 <template>
-  <div class="login-page">
+  <div class="login">
     <h1>Admin Login</h1>
 
     <input v-model="email" type="email" placeholder="Email" />
@@ -23,7 +23,7 @@ const handleLogin = async () => {
 </template>
 
 <style>
-.login-page {
+.login {
   max-width: 350px;
   margin: 50px auto;
   display: flex;
@@ -32,7 +32,6 @@ const handleLogin = async () => {
 }
 input {
   padding: 10px;
-  font-size: 16px;
 }
 button {
   padding: 10px;

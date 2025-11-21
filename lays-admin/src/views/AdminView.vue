@@ -1,7 +1,7 @@
 <script setup>
-import { useAuthStore } from '../stores/auth'
-import { ref, onMounted } from 'vue'
 import axios from 'axios'
+import { onMounted, ref } from 'vue'
+import { useAuthStore } from '../stores/auth'
 
 const auth = useAuthStore()
 const bags = ref([])
@@ -17,11 +17,10 @@ onMounted(async () => {
     <h1>Admin Panel</h1>
     <button @click="auth.logout()">Logout</button>
 
-    <h2>Submitted Bags</h2>
+    <h2>All Submitted Bags</h2>
 
     <div v-for="bag in bags" :key="bag._id">
-      <p><strong>{{ bag.name }}</strong></p>
-      <button @click="deleteBag(bag._id)">Delete</button>
+      <p><b>{{ bag.name }}</b></p>
     </div>
   </div>
 </template>
